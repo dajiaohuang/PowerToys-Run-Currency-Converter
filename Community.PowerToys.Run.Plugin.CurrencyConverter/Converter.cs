@@ -136,8 +136,8 @@ namespace Community.PowerToys.Run.Plugin.CurrencyConverter
 
         private Result? GetConversion(bool isGlobal, decimal amountToConvert, string fromCurrency, string toCurrency)
         {
-            fromCurrency = GetCurrencyFromAlias(fromCurrency.ToLower());
-            toCurrency = GetCurrencyFromAlias(toCurrency.ToLower());
+            fromCurrency = GetCurrencyFromAlias(fromCurrency.ToLowerInvariant());
+            toCurrency = GetCurrencyFromAlias(toCurrency.ToLowerInvariant());
 
             if (fromCurrency == toCurrency || string.IsNullOrEmpty(fromCurrency) || string.IsNullOrEmpty(toCurrency))
             {
